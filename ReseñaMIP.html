@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Meta tags vitales para PWA y comportamiento Mobile-first -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Reseña de Servicio MIP</title>
+
+    <!-- Colores y capacidades PWA -->
+    <meta name="theme-color" content="#4dc4bc">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Reseña MIP">
+
+    <!-- Favicon e ícono para el home screen -->
+    <link rel="apple-touch-icon" href="https://drive.google.com/uc?id=1VRV0AGstcIByLGiTtemag50L3Aem_bpe">
+    <link rel="icon" type="image/png" href="https://drive.google.com/uc?id=1VRV0AGstcIByLGiTtemag50L3Aem_bpe">
+
+    <style>
+        /* CSS Reset para asegurar que el iframe cubra toda la PWA como una app nativa */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; /* Evita doble scroll */
+            background-color: #f4f7f6; /* bg-color original para evitar pantallazo blanco */
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* Opcional: Pantalla de carga mientras responde Google */
+        #loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: sans-serif;
+            color: #4dc4bc;
+            z-index: -1; /* Queda detrás y el iframe lo cubre cuando carga */
+        }
+    </style>
+</head>
+<body>
+
+<div id="loader">Cargando aplicación...</div>
+
+<!-- ATRIBUTO allow="geolocation" OBLIGATORIO PARA QUE FUNCIONE EL GPS DENTRO DEL IFRAME -->
+<!-- SRC con la URL de la Web App de Google Apps Script -->
+<iframe
+        src="https://script.google.com/macros/s/AKfycbx8u1JNI9339p3srHHNTYl057TXd52oG2Z9sfw9oAINmbnundbO0JcKEP3ei2SUGTZt/exec"
+        allow="geolocation"
+        title="Formulario de Reseña">
+</iframe>
+
+</body>
+</html>
